@@ -18,7 +18,7 @@ const options = {
         email: "draminen@uncc.edu",
       },
     },
-    host: "localhost:3000",
+    host: "http://137.184.115.225:3000",
     basePath: "/",
   },
   apis: ["./index.js"],
@@ -102,7 +102,7 @@ app.post("/Key_phrase", async (req, res) => {
     res.json(keyResults);
 
 })
-
+ 
 /**
  * @swagger
  * /PII:
