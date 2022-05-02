@@ -18,7 +18,7 @@ const options = {
         email: "draminen@uncc.edu",
       },
     },
-    host: "localhost:3000",
+    host: ":3000",
     basePath: "/",
   },
   apis: ["./index.js"],
@@ -62,7 +62,12 @@ const textAnalyticsClient = new TextAnalyticsClient(endpoint,  new AzureKeyCrede
  *           type: array
  *           items:
  *              type: string
- *           example: ["str1","str2","str3"]
+ *           example: {"inputText":[
+    "Microsoft was founded by Bill Gates and Paul Allen on April 4, 1975, to develop and sell BASIC interpreters for the Altair 8800",
+    "La sede principal de Microsoft se encuentra en la ciudad de Redmond, a 21 kilómetros de Seattle.",
+    "Hi this is Dedeepya",
+    "Seattle is a beautiful palce to visit",
+    "Power people will make places powerful"]}
  *     responses:
  *       200:
  *         description: Successfully retrieved
@@ -91,7 +96,7 @@ app.post("/entity", async (req, res) => {
  *           type: array
  *           items:
  *              type: string
- *           example: ["str1"]
+ *           example: {"KeyphraseText":["My cat might need to see a veterinarian."]}
  *     responses:
  *       200:
  *         description: Successfully retrieved
@@ -121,7 +126,7 @@ app.post("/Key_phrase", async (req, res) => {
  *           type: array
  *           items:
  *              type: string
- *           example: ["str1"]
+ *           example: {"PIIText":["The employee's phone number is (555) 555-5555."]}
  *     responses:
  *       200:
  *         description: Successfully retrieved
